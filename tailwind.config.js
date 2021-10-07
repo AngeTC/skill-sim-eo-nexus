@@ -4,8 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "dark-blue": "#282c34",
-        "light-blue": "#61dafb",
+        primary: "#054d75",
+        secondary: "#a4ded2",
+        tertiary: "#6fa4b5",
+        grey: "#3b4748",
       },
       animation: {
         "slow-spin": "slow-spin infinite 20s linear",
