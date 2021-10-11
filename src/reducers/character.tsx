@@ -9,18 +9,25 @@ const initialState = {
   subClass: null,
 };
 
+export const actionUpdateLevel = createAction<number>("actionUpdateLevel");
 export const actionUpdateLevelCap = createAction<number>(
   "actionUpdateLevelCap"
 );
 
 const characterReducer = createReducer(initialState, (builder) => {
   builder
+    .addCase(actionUpdateLevel, (state, action) => {
+      state.level = action.payload;
+    })
     .addCase(actionUpdateLevelCap, (state, action) => {
       state.levelCap = action.payload;
     });
 });
 
 // Selectors
-export const levelCapSelector = (state: RootState): number => state.character.levelCap;
+export const levelSelector = (state: RootState): number =>
+  state.character.level;
+export const levelCapSelector = (state: RootState): number =>
+  state.character.levelCap;
 
 export default characterReducer;
